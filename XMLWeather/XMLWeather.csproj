@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="currentWeather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="currentWeather.Designer.cs">
+      <DependentUpon>currentWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forecastWeather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forecastWeather.Designer.cs">
+      <DependentUpon>forecastWeather.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="currentWeather.resx">
+      <DependentUpon>currentWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forecastWeather.resx">
+      <DependentUpon>forecastWeather.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +97,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rain3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overcast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scattered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raining.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heavyrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgfc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
