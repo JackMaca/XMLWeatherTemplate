@@ -56,6 +56,7 @@ namespace XMLWeather
                         {
                             switch (day)
                             {
+                                //puts corresponding dates at the top of each section
                                 case 1:
                                     dateLabel1.Text = grandChild.Attributes["day"].Value;
                                     break;
@@ -71,123 +72,198 @@ namespace XMLWeather
                         }
                         foreach (XmlNode greatGrandChild in grandChild.ChildNodes)
                         {
-                            if (greatGrandChild.Name == "temperature")
+                            if (greatGrandChild.Name == "symbol")
                             {
                                 switch (day)
                                 {
+                                    //change large image based on weather
+
+                                    ///Somehow adding an empty case 1 wherever the 3 cases are used,
+                                    ///it fixes the last day displayed from being the last day in the xml file.
                                     case 1:
-                                        tempLabel1.Text = greatGrandChild.Attributes["day"].Value + "°C";
-                                        day++;
                                         break;
                                     case 2:
-                                        tempLabel2.Text = greatGrandChild.Attributes["day"].Value + "°C";
-                                        day++;
+                                        if (greatGrandChild.Attributes["name"].Value == "light rain")
+                                        {
+                                            cloudPicture1.BackgroundImage = Properties.Resources.lightrain;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "overcast clouds")
+                                        {
+                                            cloudPicture1.BackgroundImage = Properties.Resources.overcast;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "few clouds")
+                                        {
+                                            cloudPicture1.BackgroundImage = Properties.Resources.scattered;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "moderate rain")
+                                        {
+                                            cloudPicture1.BackgroundImage = Properties.Resources.raining;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "clear sky")
+                                        {
+                                            cloudPicture1.BackgroundImage = Properties.Resources.clear;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "heavy intensity rain")
+                                        {
+                                            cloudPicture1.BackgroundImage = Properties.Resources.heavyrain;
+                                        }                             
                                         break;
                                     case 3:
-                                        tempLabel3.Text = greatGrandChild.Attributes["day"].Value + "°C";
+                                        if (greatGrandChild.Attributes["name"].Value == "light rain")
+                                        {
+                                            cloudPicture2.BackgroundImage = Properties.Resources.lightrain;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "overcast clouds")
+                                        {
+                                            cloudPicture2.BackgroundImage = Properties.Resources.overcast;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "few clouds")
+                                        {
+                                            cloudPicture2.BackgroundImage = Properties.Resources.scattered;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "moderate rain")
+                                        {
+                                            cloudPicture2.BackgroundImage = Properties.Resources.raining;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "clear sky")
+                                        {
+                                            cloudPicture2.BackgroundImage = Properties.Resources.clear;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "heavy intensity rain")
+                                        {
+                                            cloudPicture2.BackgroundImage = Properties.Resources.heavyrain;
+                                        }
+                                        break;
+                                    case 4:
+                                        if (greatGrandChild.Attributes["name"].Value == "light rain")
+                                        {
+                                            cloudPicture3.BackgroundImage = Properties.Resources.lightrain;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "overcast clouds")
+                                        {
+                                            cloudPicture3.BackgroundImage = Properties.Resources.overcast;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "few clouds")
+                                        {
+                                            cloudPicture3.BackgroundImage = Properties.Resources.scattered;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "moderate rain")
+                                        {
+                                            cloudPicture3.BackgroundImage = Properties.Resources.raining;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "clear sky")
+                                        {
+                                            cloudPicture3.BackgroundImage = Properties.Resources.clear;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "heavy intensity rain")
+                                        {
+                                            cloudPicture3.BackgroundImage = Properties.Resources.heavyrain;
+                                        }
                                         break;
                                     default:
                                         break;
                                 }
                             }
-                            //if (greatGrandChild.Name == "symbol")
-                            //{
-                            //    switch (day)
-                            //    {
-                            //        case 1:
-                            //            //capitalize text and display related image
-                            //            #region day1 properties
-                            //            if (child.Attributes["name"].Value == "light rain")
-                            //            {
-                            //                rainLabel1.Text = "Light Rain";
-                            //                cloudPicture1.BackgroundImage = Properties.Resources.lightrain;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "few clouds")
-                            //            {
-                            //                rainLabel1.Text = "Few Clouds";
-                            //                cloudPicture1.BackgroundImage = Properties.Resources.scattered;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "moderate rain")
-                            //            {
-                            //                rainLabel1.Text = "Moderate Rain";
-                            //                cloudPicture1.BackgroundImage = Properties.Resources.raining;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "clear sky")
-                            //            {
-                            //                rainLabel1.Text = "Clear Sky";
-                            //                cloudPicture1.BackgroundImage = Properties.Resources.clear;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "heavy intensity rain")
-                            //            {
-                            //                rainLabel1.Text = "Heavy Intensity Rain";
-                            //                cloudPicture1.BackgroundImage = Properties.Resources.heavyrain;
-                            //            }
-                            //            #endregion
-                            //            day++;
-                            //            break;
-                            //        case 2:
-                            //            #region day2 properties
-                            //            if (child.Attributes["name"].Value == "light rain")
-                            //            {
-                            //                rainLabel2.Text = "Light Rain";
-                            //                cloudPicture2.BackgroundImage = Properties.Resources.lightrain;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "few clouds")
-                            //            {
-                            //                rainLabel2.Text = "Few Clouds";
-                            //                cloudPicture2.BackgroundImage = Properties.Resources.scattered;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "moderate rain")
-                            //            {
-                            //                rainLabel2.Text = "Moderate Rain";
-                            //                cloudPicture2.BackgroundImage = Properties.Resources.raining;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "clear sky")
-                            //            {
-                            //                rainLabel2.Text = "Clear Sky";
-                            //                cloudPicture2.BackgroundImage = Properties.Resources.clear;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "heavy intensity rain")
-                            //            {
-                            //                rainLabel2.Text = "Heavy Intensity Rain";
-                            //                cloudPicture2.BackgroundImage = Properties.Resources.heavyrain;
-                            //            }
-                            //            #endregion
-                            //            day++;
-                            //            break;
-                            //        case 3:
-                            //            #region day3 properties
-                            //            if (child.Attributes["name"].Value == "light rain")
-                            //            {
-                            //                rainLabel3.Text = "Light Rain";
-                            //                cloudPicture3.BackgroundImage = Properties.Resources.lightrain;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "few clouds")
-                            //            {
-                            //                rainLabel3.Text = "Few Clouds";
-                            //                cloudPicture3.BackgroundImage = Properties.Resources.scattered;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "moderate rain")
-                            //            {
-                            //                rainLabel3.Text = "Moderate Rain";
-                            //                cloudPicture3.BackgroundImage = Properties.Resources.raining;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "clear sky")
-                            //            {
-                            //                rainLabel3.Text = "Clear Sky";
-                            //                cloudPicture3.BackgroundImage = Properties.Resources.clear;
-                            //            }
-                            //            else if (child.Attributes["name"].Value == "heavy intensity rain")
-                            //            {
-                            //                rainLabel3.Text = "Heavy Intensity Rain";
-                            //                cloudPicture3.BackgroundImage = Properties.Resources.heavyrain;
-                            //            }
-                            //            #endregion
-                            //            break;
-                            //        default:
-                            //            break;
-                            //    }
-                            //}
+                            if (greatGrandChild.Name == "temperature")
+                            {
+                                //Displays  temperature value and different images based on the temperature for the day
+          
+                                switch (day)
+                                {
+                                    case 1:
+                                        break;
+                                    case 2:
+                                        tempLabel1.Text = greatGrandChild.Attributes["day"].Value + "°C";
+
+                                        double day1Temp = Convert.ToDouble(greatGrandChild.Attributes["day"].Value);
+                                        if (day1Temp <= -10)
+                                        {
+                                            tempPicture1.BackgroundImage = Properties.Resources.cold;
+                                        }
+                                        else if (day1Temp <= 9.99 && day1Temp >= -9.99)
+                                        {
+                                            tempPicture1.BackgroundImage = Properties.Resources.cool;
+                                        }
+                                        else if (day1Temp >= 10 && day1Temp <= 19.99)
+                                        {
+                                            tempPicture1.BackgroundImage = Properties.Resources.warm;
+                                        }
+                                        else
+                                        {
+                                            tempPicture1.BackgroundImage = Properties.Resources.hot;
+                                        }
+                                        break;
+                                    case 3:
+                                        tempLabel2.Text = greatGrandChild.Attributes["day"].Value + "°C";
+
+                                        double day2Temp = Convert.ToDouble(greatGrandChild.Attributes["day"].Value);
+                                        if (day2Temp <= -10)
+                                        {
+                                            tempPicture2.BackgroundImage = Properties.Resources.cold;
+                                        }
+                                        else if (day2Temp <= 9.99 && day2Temp >= -9.99)
+                                        {
+                                            tempPicture2.BackgroundImage = Properties.Resources.cool;
+                                        }
+                                        else if (day2Temp >= 10 && day2Temp <= 19.99)
+                                        {
+                                            tempPicture2.BackgroundImage = Properties.Resources.warm;
+                                        }
+                                        else
+                                        {
+                                            tempPicture2.BackgroundImage = Properties.Resources.hot;
+                                        }
+                                        break;
+                                    case 4:
+                                        tempLabel3.Text = greatGrandChild.Attributes["day"].Value + "°C";
+
+                                        double day3Temp = Convert.ToDouble(greatGrandChild.Attributes["day"].Value);
+                                        if (day3Temp <= -10)
+                                        {
+                                            tempPicture3.BackgroundImage = Properties.Resources.cold;
+                                        }
+                                        else if (day3Temp <= 9.99 && day3Temp >= -9.99)
+                                        {
+                                            tempPicture3.BackgroundImage = Properties.Resources.cool;
+                                        }
+                                        else if (day3Temp >= 10 && day3Temp <= 19.99)
+                                        {
+                                            tempPicture3.BackgroundImage = Properties.Resources.warm;
+                                        }
+                                        else
+                                        {
+                                            tempPicture3.BackgroundImage = Properties.Resources.hot;
+                                        }
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+
+                            if (greatGrandChild.Name == "clouds")
+                            {
+                                //displays chance that rain will fall.
+                                switch (day)
+                                {
+                                    //not sure if clouds > all is actually the precipitation chance
+                                    case 1:
+                                        day++;
+                                        break;
+                                    case 2:
+                                        rainLabel1.Text = greatGrandChild.Attributes["all"].Value + "% Rain";
+                                        day++;
+                                        break;
+                                    case 3:
+                                        rainLabel2.Text = greatGrandChild.Attributes["all"].Value + "% Rain";
+                                        day++;
+                                        break;
+                                    case 4:
+                                        rainLabel3.Text = greatGrandChild.Attributes["all"].Value + "% Rain";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }                    
                         }
                     }
                 }
@@ -202,10 +278,10 @@ namespace XMLWeather
         private void todayButton_Click(object sender, EventArgs e)
         {
             Form f = this.FindForm();
-            forecastWeather fw = new forecastWeather();
-            f.Controls.Add(fw);
+            currentWeather cw = new currentWeather();
+            f.Controls.Add(cw);
             f.Controls.Remove(this);
-            fw.Location = new Point((this.Width - fw.Width) / 2, (this.Height - fw.Height) / 2);
+            cw.Location = new Point((this.Width - cw.Width) / 2, (this.Height - cw.Height) / 2);
         }
     }
 }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// Jack MacAlpine
+/// ICS4U
+/// Mr. T
+/// Weather XML
+/// Program displays weather and allows users to switch between current weather and the forecast weather for the next few days.
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
