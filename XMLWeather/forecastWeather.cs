@@ -87,6 +87,10 @@ namespace XMLWeather
                                         {
                                             cloudPicture1.BackgroundImage = Properties.Resources.lightrain;
                                         }
+                                        else if (greatGrandChild.Attributes["name"].Value == "scattered clouds")
+                                        {
+                                            cloudPicture1.BackgroundImage = Properties.Resources.scattered;
+                                        }
                                         else if (greatGrandChild.Attributes["name"].Value == "overcast clouds")
                                         {
                                             cloudPicture1.BackgroundImage = Properties.Resources.overcast;
@@ -113,6 +117,10 @@ namespace XMLWeather
                                         {
                                             cloudPicture2.BackgroundImage = Properties.Resources.lightrain;
                                         }
+                                        else if (greatGrandChild.Attributes["name"].Value == "scattered clouds")
+                                        {
+                                            cloudPicture2.BackgroundImage = Properties.Resources.scattered;
+                                        }
                                         else if (greatGrandChild.Attributes["name"].Value == "overcast clouds")
                                         {
                                             cloudPicture2.BackgroundImage = Properties.Resources.overcast;
@@ -138,6 +146,10 @@ namespace XMLWeather
                                         if (greatGrandChild.Attributes["name"].Value == "light rain")
                                         {
                                             cloudPicture3.BackgroundImage = Properties.Resources.lightrain;
+                                        }
+                                        else if (greatGrandChild.Attributes["name"].Value == "scattered clouds")
+                                        {
+                                            cloudPicture3.BackgroundImage = Properties.Resources.scattered;
                                         }
                                         else if (greatGrandChild.Attributes["name"].Value == "overcast clouds")
                                         {
